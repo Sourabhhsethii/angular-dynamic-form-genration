@@ -1,0 +1,88 @@
+<div class="example-container">
+
+    <mat-card>
+  
+
+    <mat-card class="example-card">
+            <mat-card-header>
+              <div mat-card-avatar>
+                <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon></div>
+              <mat-card-title>Create Dynamic Forms</mat-card-title>
+              <mat-card-subtitle>Required</mat-card-subtitle>
+            </mat-card-header>
+            <form role="form" novalidate  (ngSubmit)="add()">
+                    <mat-form-field >
+                            <input matInput placeholder="Key"  [(ngModel)]="key"  name="key">
+                      
+                    </mat-form-field>
+                
+                    <mat-form-field>
+                            <mat-select  name="typeSelected"  formControlName="typeSelected" [(value)]="typeSelected">
+                             
+                              <mat-option value="input">input</mat-option>
+                              <mat-option value="radio">radio</mat-option>
+                              <mat-option value="radio">select</mat-option>
+                              
+                            </mat-select>
+                    </mat-form-field>
+                  
+
+                
+
+                      <mat-form-field>
+                            <input  name="label"   matInput placeholder="label" [(ngModel)]="label"  name="label" >
+                          </mat-form-field>
+                   
+                          <mat-form-field>
+                                <mat-select   name="requiredSelected" formControlName="requiredSelected" [(value)]="requiredSelected">
+                                 
+                                  <mat-option value="true">Yes</mat-option>
+                                  <mat-option value="false">No</mat-option>
+                                  
+                                </mat-select>
+                              </mat-form-field>
+                              <p>key: {{key}}</p>  
+                              <p>Type: {{typeSelected}}</p>  
+                              <p>label: {{label}}</p>  
+                              <p>Required: {{requiredSelected}}</p>   
+                               
+                              <button type="submit" color="primary" mat-raised-button>Add</button>
+                            
+                            </form>              
+                          
+        </mat-card>
+            <mat-card-content>
+                   
+                   
+                           
+            </mat-card-content>
+    
+    </mat-card>
+
+    <mat-card>
+  
+
+        <mat-card class="example-card">
+                <mat-card-header>
+                  <div mat-card-avatar>
+                    <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon></div>
+                  <mat-card-title>Dynamic Forms</mat-card-title>
+                  <mat-card-subtitle></mat-card-subtitle>
+                </mat-card-header>
+                <form role="form" novalidate [formGroup]="form" (ngSubmit)="submit()">
+                    <formly-form [model]="model" [fields]="fields" [form]="form">
+                      <button type="submit" color="primary" mat-raised-button>Submit</button>
+                    </formly-form>
+                 
+                  </form>              
+                              
+            </mat-card>
+                <mat-card-content>
+                       
+                       
+                               
+                </mat-card-content>
+        
+        </mat-card>
+  
+  </div>
